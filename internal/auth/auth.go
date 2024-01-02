@@ -98,7 +98,7 @@ func (provider *OIDCProviderInfo) VerifyToken(aToken string) error {
 	// Parse the access token
 	token, _, err := parser.ParseUnverified(aToken, jwt.MapClaims{})
 	if err != nil {
-		return fmt.Errorf("Error parsing access token:", err)
+		return fmt.Errorf("Error parsing access token: %v", err)
 	}
 
 	// Get the token's claims
